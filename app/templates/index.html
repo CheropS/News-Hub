@@ -7,9 +7,14 @@
     {% endif %}
 </head>
 <body>
-    {% for news in general %}
-         {{ news.name }}  
-         {{ news.country }}
+    <ul> 
+        {% for news in general %}
+        <li>{{ news.name }}  </li>
+        <li>{{ news.country }}</li>
+        <a>{{ news.url }}</a>
+        <li>{{ news.language}}</li>
     {% endfor %}
+    </ul>
+    
 </body>
 </html>

@@ -11,9 +11,11 @@ def index():
 
     #getting general news
     general_news=get_news('general')
-    print(general_news)
+    sports_news=get_news('sports')
+    technology_news=get_news('technology')
+
     title='Welcome to the Best Source for News and Articles'
-    return render_template('index.html', title=title, general=general_news)
+    return render_template('index.html', title=title, general=general_news, sports=sports_news, technology=technology_news )
 
 @app.route('/news/<int:news_id>')
 def news(news_id):
