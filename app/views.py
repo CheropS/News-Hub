@@ -23,7 +23,9 @@ def news(news_id):
     View news page function that return news details and its data
     '''
     source_news=get_new(news_id)
-    print(source_news)
+    for s in source_news:
+        print(s.title)
+
     name=f'{news_id}'
 
     return render_template('news.html', name=name, source_news=source_news)

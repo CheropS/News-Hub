@@ -1,9 +1,8 @@
 import os
 from app import app
 import urllib.request,json
-from .models import news 
+from .models import News, Articles
 
-News=news.News
 
 
 #getting API key
@@ -71,19 +70,31 @@ def get_new(news_id):
         news_details_response=json.loads(news_details_data)
 
         news_object=None
+        news_object_list=[]
 
+        print(news_details_response)
+        
         if news_details_response:
-            id=news_details_response.get('id')
+            
+
+            source=news_details_response.get('source')
+            author=news_details_response.get('author')
             title=news_details_response.get('title')
             description=news_details_response.get('description')
             url=news_details_response.get('url')
-            category=news_details_response.get('category')
-            language=news_details_response.get('language')
-            country=news_details_response.get('country')
+            urlToImage=news_details_response.get('urlToImage')
+            published=news_details_response.get('published')
+            content=news_details_response.get('content')
 
-            news_object=(id, name, description, url, category, language, country)
+            news_object=Articles(source, author, title, description, url, urlToImage, published, content)
+            news_object_list.append(news_object)
 
-    return news_object
+            for n in news_object_list:
+                print(n.title)
+
+        
+
+    return news_object_list
 
 
 def get_articles():

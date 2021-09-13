@@ -16,9 +16,8 @@ class Articles:
     This is an articles class that defines articles object
     '''
 
-    def __init__(self, id, name, author, title, description, url, urlToImage, published, content):
-        self.id=id
-        self.name=name
+    def __init__(self, source, author, title, description, url, urlToImage, published, content):
+        self.source=source
         self.author=author
         self.title=title
         self.description=description
