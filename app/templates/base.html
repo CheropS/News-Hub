@@ -1,5 +1,6 @@
 {% extends 'bootstrap/base.html'%}
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,9 +13,13 @@
     </head>
     <body>
         <!-- Content block -->
-
+        <!-- Navbar block  --> 
+            {% block navbar %}
+            {% include 'navbar.html' %}
+            {% endblock %}
         {% block content %}
 
+        
         {% endblock%}
     </body>
 </html>
