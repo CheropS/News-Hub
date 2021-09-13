@@ -16,8 +16,11 @@
 {% macro displayArticlesList(articles_list) %}
 
 {% for articles in articles_list %}
-<li>{{ articles.author}}</li>
-<li>{{ articles.description }}</li>
+<div class="col-xs-12">
+    <li>{{ articles.author}}</li>
+    <li>{{ articles.description }}</li>
+</div>
+
 {% endfor %}
 {% endmacro %}
 {% endmacro %}

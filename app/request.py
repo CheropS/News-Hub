@@ -58,11 +58,12 @@ def process_news(news_list):
     
     return news_result
 
-def get_new(id):
+def get_new(news_id):
     '''
     function that gets json response to our url
     '''
-    get_news_details_url=headline_url.format(id, api_key)
+    get_news_details_url=headline_url.format(news_id, api_key)
+    print(get_news_details_url)
     
 
     with urllib.request.urlopen(get_news_details_url) as url:
@@ -73,7 +74,7 @@ def get_new(id):
 
         if news_details_response:
             id=news_details_response.get('id')
-            name=news_details_response.get('name')
+            title=news_details_response.get('title')
             description=news_details_response.get('description')
             url=news_details_response.get('url')
             category=news_details_response.get('category')

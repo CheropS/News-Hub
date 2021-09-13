@@ -17,15 +17,16 @@ def index():
     title='Welcome to the Best Source for News and Articles'
     return render_template('index.html', title=title, general=general_news, sports=sports_news, technology=technology_news )
 
-@app.route('/news/<int:news_id>')
+@app.route('/news/<string:news_id>')
 def news(news_id):
     '''
     View news page function that return news details and its data
     '''
-    new=get_new(id)
-    name=f'{news.name}'
+    source_news=get_new(news_id)
+    print(source_news)
+    name=f'{news_id}'
 
-    return render_template('news.html', id=news_id, name=name)
+    return render_template('news.html', name=name, source_news=source_news)
 
 #getting articles 
 
