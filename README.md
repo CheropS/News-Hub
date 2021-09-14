@@ -14,7 +14,7 @@ Bootsrap
 
 ### Installing
 
-Fork the project to your computer by following the link: https://github.com/CheropS/password-hub.git
+Fork the project to your computer by following the link: https://github.com/CheropS/News-Hub
 
 
 ## Issues 
